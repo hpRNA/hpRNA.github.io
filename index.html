@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>hpRNA: Hamiltonian paths for bacteriophage MS2</title>
+    <title>hpRNA: Hamiltonian paths for virus genome organization</title>
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
@@ -17,7 +17,7 @@
     <div class="wrapper">
       <header>
         <h1 class="header">hpRNA</h1>
-        <p class="header">Hamiltonian paths for bacteriophage MS2</p>
+        <p class="header">Hamiltonian paths for virus genome organization</p>
 
         <ul>
           <li class="download"><a class="buttons" href="https://github.com/hpRNA/hpRNA/zipball/master">Download ZIP</a></li>
@@ -42,7 +42,7 @@
 <a id="jg923yorkacuk" class="anchor" href="#jg923yorkacuk" aria-hidden="true"><span class="octicon octicon-link"></span></a><a href="mailto:jg923@york.ac.uk">jg923@york.ac.uk</a>
 </h3>
 
-<p>Code used to generate and interrogate Hamiltonian paths corresponding to bacteriophage MS2. For publication 2014. GLP v3 license applies: see separate file for information.</p>
+<p>Code used to generate and interrogate Hamiltonian paths corresponding to virus genome organization. Demonstrated for a model case, bacteriophage MS2. For publication 2015. GLP v3 license applies: see separate file for information.</p>
 
 <h2>
 <a id="contents" class="anchor" href="#contents" aria-hidden="true"><span class="octicon octicon-link"></span></a>CONTENTS</h2>
@@ -59,23 +59,23 @@
 <h2>
 <a id="introduction" class="anchor" href="#introduction" aria-hidden="true"><span class="octicon octicon-link"></span></a>INTRODUCTION</h2>
 
-<p>This code, as supplied, generates Hamiltonian paths as models for the RNA organisation in proximity to capsid, for the bacteriophage MS2. A script is also supplied that allows the user to apply constraints to the library of Hamiltonian paths, thus enabling the addition of constraints arising from further structural insights, such as restriction to circular Hamiltonian paths, that narrow down the possible path solutions. The software is provided "as is", but the author is willing to correspond to help anyone with interest to amend/adapt the code, to interrogate asymmetric structures of other viruses and determine possible RNA conformations. A link to a scientific manuscript describing the process will be added here upon publication.</p>
+<p>This code, as supplied, generates Hamiltonian paths as models for the RNA organization in proximity to capsid for ssRNA viruses, initialized for the bacteriophage MS2. A script is also supplied that allows the user to apply constraints to the library of Hamiltonian paths, thus enabling the addition of constraints arising from further structural insights, such as restriction to circular Hamiltonian paths, that narrow down the possible path solutions. The software is provided "as is", but the author is willing to correspond to help anyone with interest to amend/adapt the code, to interrogate asymmetric structures of other viruses and determine possible RNA conformations. A link to a scientific manuscript describing the process will be added here upon publication.</p>
 
 <h2>
 <a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>REQUIREMENTS</h2>
 
-<p>The software is coded in python 2.7, a scripting language that is very easy to use and adapt. More information on python can be found at python.org or greenteapress.com/thinkpython/ 
+<p>The software is coded in python 2.7, a scripting language that is very easy to use and adapt. More information on python can be found at <a href="http://www.python.org/">python.org</a> or <a href="http://greenteapress.com/thinkpython/">greenteapress.com/thinkpython/</a>
 Required python modules are:</p>
 
 <ul>
-<li>pycairo</li>
-<li>matplotlib</li>
+<li><a href="http://www.cairographics.org/pycairo/">pycairo</a></li>
+<li><a href="http://matplotlib.org/">matplotlib</a></li>
 </ul>
 
 <p>Other required software:</p>
 
 <ul>
-<li>cairo    cairographics.org</li>
+<li><a href="http://www.cairographics.org/">cairo</a></li>
 </ul>
 
 <h2>
@@ -87,8 +87,7 @@ Required python modules are:</p>
 <li>Generating Hamiltonian paths</li>
 </ul>
 
-<p>Using hamiltonian_path_generate.py the user can generate Hamiltonian paths that relate to the geometry of the RNA density in proximity to capsid. In the case of bacteriophage MS2, the geometric cages is as shown in Fig. 1b in the manuscript, with edges connecting the 60 packaging signals (PSs) in contact with capsid protein. This geometry is specified within the script. Therefore, the script as provided can be used for MS2, GA or any Leviviridae with RNA cages of the same topology (i.e. polyhedral cages with the same number of vertices and edge connections between them, irrespective of 
-edge length or relative orientations of the edges).</p>
+<p>Using hamiltonian_path_generate.py the user can generate Hamiltonian paths that relate to the geometry of the RNA density in proximity to capsid. In the case of bacteriophage MS2, the geometric cages is as shown in Fig. 1b in the manuscript, with edges connecting the 60 packaging signals (PSs) in contact with capsid protein. This geometry is specified within the script. Therefore, the script as provided can be used for MS2, GA or any Leviviridae with RNA cages of the same topology (i.e. polyhedral cages with the same number of vertices and edge connections between them, irrespective of edge length or relative orientations of the edges).</p>
 
 <p>However, the neighbour maps and general geometry in the script can easily be substituted to make the code applicable to any cage of interest, and thus treat viruses with different geometries. If that were desired, other alterations would also have to be made in following steps in the code. For example, the number indicating the length of the path would have to be adjusted (note that for MS2, all paths are of length 59). </p>
 
