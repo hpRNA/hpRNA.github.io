@@ -44,6 +44,8 @@
 
 <p>Code used to generate and interrogate Hamiltonian paths corresponding to virus genome organization. Demonstrated for a model case, bacteriophage MS2. For publication 2015. GLP v3 license applies: see separate file for information.</p>
 
+<img src="/striking_image.png" alt="striking_image.png" style="width:400px">
+
 <h2>
 <a id="contents" class="anchor" href="#contents" aria-hidden="true"><span class="octicon octicon-link"></span></a>CONTENTS</h2>
 
@@ -93,11 +95,13 @@
 
 <p>We have utilised several steps to speed up the derivation of the Hamiltonian paths. However, for clarity, many of these have been rolled back for this open-source code. Yet many special cases for MS2 have been coded, and must be considered when adapting the code: for example, in MS2 the paths is effectively circular, because both 5' and 3' end bind to MP. In the code, this is specified as as a vertex that the path can only visit  at the start and end. This constraint will also apply to many other viruses, but should be omitted if there is no evidence of such circularisation. </p>
 
-<p>Paths are calculated with reference to the structural organisation of the capsid. For this, a labelling system is introduced, in which proteins are labeled as (cf "geometry_guide.png"): <code>abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSUVTWXYZ01234567</code>. </p>
+<p>Paths are calculated with reference to the structural organisation of the capsid. For this, a labelling system is introduced, in which proteins are labeled as (cf <a href="/geometry_guide.png">"geometry_guide.png"</a>): <code>abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSUVTWXYZ01234567</code>. </p>
 
 <p>In the analysis presented in this paper, we ignore density associated with "short" edges of the polyhedron, i.e. only consider density related to long edges. That could be modified if higher resolution data were available for the short edges as well. </p>
 
 <p>Once paths have been generated on the protein neighbour map, they can be generalised into moves, i.e. described as the order of mapping operations between proteins, rather than the proteins themselves. This allows an easier way to recreate the paths starting from any given protein. Also, calculation of symmetric and mirror paths is much easier when the protein positions are disregarded: these degenerate paths can be calculated with simple string manipulations. This is all undertaken in the script hamiltonian_paths_multiply.py</p>
+
+<img src="/geometry_guide.png" alt="geometry_guide.png" style="width:800px">
 
 <ul>
 <li>Mapping Hamiltonian paths onto the virus</li>
@@ -131,7 +135,7 @@
 
 <p>The connections were named with reference to the vertices they connect. In particular, we labelled the vertices with reference to the capsid proteins, using again the labelling system introduced earlier, i.e. PS positions being labelled as proteins with the following letters and numbers: <code>abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSUVTWXYZ01234567</code></p>
 
-<p>"geometry_guide.png" shows the relation between the heterodimers and vertices. The maturation protein has been (arbitrarily and without loss of generality) chosen to map to the homodimer on the two-fold axis between vertices 5 and 6. This is marked on the path outputs.</p>
+<p><a href="/geometry_guide.png">"geometry_guide.png"</a> shows the relation between the heterodimers and vertices. The maturation protein has been (arbitrarily and without loss of generality) chosen to map to the homodimer on the two-fold axis between vertices 5 and 6. This is marked on the path outputs.</p>
 
 <ul>
 <li>Constraining paths</li>
